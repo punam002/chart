@@ -1,0 +1,254 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+}
+
+header {
+    background: linear-gradient(90deg, #4CAF50, #388E3C);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sign-in-btn {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    color: #4CAF50;
+    border: 2px solid #4CAF50;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.sign-in-btn:hover {
+    background: #4CAF50;
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+/* Filters Section */
+.filters {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(4, 4, 4, 0.1);
+    text-align: center;
+    width: 60%;
+    margin-bottom: 30px;
+}
+
+.filters label {
+    font-weight: bold;
+    margin: 10px 0 5px;
+    display: block;
+}
+
+select, input[type="date"] {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #bc1c1c;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: white;
+}
+
+/* Apply Button Style */
+.apply-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 95px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.apply-btn:hover {
+    background-color: #067929;
+}
+
+@media (max-width: 768px) {
+    .apply-btn {
+        width: 80%;
+        font-size: 14px;
+    }
+
+    .filters {
+        width: 100%;
+    }
+
+    .chart-container {
+        width: 100%;
+    }
+
+    .sign-in-btn {
+        position: static;
+        display: block;
+        margin: 10px auto;
+        transform: none;
+    }
+}
+.chart-container {
+    height: 500px;
+    width: 90%;
+    max-width: 900px;
+    display: flex;
+    justify-content: center; /* Charts ko center karne ke liye */
+    align-items: flex-end;
+    gap: 10px;
+    background: #dacece;
+    padding: 20px;
+    border: 1px solid hwb(0 74% 21%);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;  /* Container ko center karne ke liye */
+}
+
+.labels {
+    text-align: center;  /* Labels ko center align karne ke liye */
+    margin-top: 20px;
+}
+
+.labels div {
+    display: inline-block;
+    margin: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+.bar {
+    flex: 1;
+    position: relative;
+    background-color: hsla(223, 66%, 53%, 0.86);
+    text-align: center;
+    color: rgb(224, 6, 6);
+    font-size: 14px;
+    border-radius: 5px 5px 0 0;
+}
+.bar::after {
+    content: attr(data-value) '%';
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    
+    transform: translateX(-50%);
+    color: #333;
+    font-size: 12px;
+}
+.bar-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 300px;
+}
+.bar[data-value="120"] {
+    height: 120%;
+}
+.bar[data-value="90"] {
+    height: 90%;
+}
+.bar[data-value="80"] {
+    height: 80%;
+}
+.bar[data-value="70"] {
+    height: 70%;
+}
+.bar[data-value="60"] {
+    height: 60%;
+}
+.bar[data-value="40"] {
+    height: 40%;
+}
+.bar[data-value="30"] {
+    height: 30%;
+}
+.bar[data-value="20"] {
+    height: 20%;
+}
+.bar[data-value="10"] {
+    height: 10%;
+}
+.line-chart {
+    width: 100%;
+    height: 200px;
+}
+h2 {
+    text-align: center;  /* Heading ko center align karne ke liye */
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+h2{
+    color: #7a0e0e;
+    margin-bottom: 10px;
+}
+.line-chart {
+    width: 100%;
+    height: auto;
+    background-color: #f9f9f9; 
+    border: 1px solid hsl(0, 67%, 98%);   
+    margin: 20px 0;           
+}
+.line-chart line {
+    stroke: #e0e0e0;          
+    stroke-width: 0.5;
+}
+.line-chart polyline {
+    stroke: #2196f3;          
+    stroke-width: 2;
+    fill: none;               
+}
+.line-chart circle {
+    fill: #2196f3;            
+}
+.line-chart text {
+    font-family: Arial, sans-serif; 
+    font-size: 10px;               
+    fill: #333;                    
+}
+.labels div {
+    display: inline-block;
+    margin: 10px;
+    font-weight: bold;
+}
+
+
+
+/* Chart Section */
+.chart-container {
+    width: 80%;
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h2 {
+    color: #63af4c;
+    font-size: 22px;
+}
+
+
+
